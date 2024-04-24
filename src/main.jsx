@@ -16,15 +16,15 @@ const router = createBrowserRouter([
   },
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
- <>
+  <>
     <SidebarProvider>
-    <CartProvider>
       <ProductProvider>
-        <RouterProvider router={router} />
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
       </ProductProvider>
-      </CartProvider>
     </SidebarProvider>
 
- </>
+  </>
 
 )

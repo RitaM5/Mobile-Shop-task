@@ -11,13 +11,13 @@ const Navbar = () => {
   return (
     <div className=" z-50 w-full bg-base-100 font-poppins">
       <div className="my-4 h-full lg:hidden font-caveat inline-flex items-center gap-3">
-        <img src="/public/img/cbi_xiaomi-logo.png" alt="" srcset="" /><h1 className="text-3xl font-semibold">Mobile Shop</h1>
+        <img src="./img/cbi_xiaomi-logo.png" alt="" srcset="" /><h1 className="text-3xl font-semibold">Mobile Shop</h1>
       </div>
       <nav className="bg-base-100">
         <div className="flex font-poppins items-center font-medium justify-around h-20 ">
           <div className="z-50 p-5 md:w-auto w-full flex justify-between">
             <div className="hidden lg:inline-flex items-center gap-3">
-              <img className="hidden lg:block" src="/public/img/cbi_xiaomi-logo.png" alt="" srcset="" />
+              <img className="hidden lg:block" src="./img/cbi_xiaomi-logo.png" alt="" srcset="" />
               <h1 className="global-nav__logo relative font-caveat textColor text-3xl font-semibold hidden lg:block">Mobile Shop</h1>
             </div>
 

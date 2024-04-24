@@ -1,10 +1,12 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { ProductContext } from './ProductProvider';
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [itemAmount, setItemAmount] = useState(0);
     const [total, setTotal] = useState(0);
+    const {dicreaseQuantity, increaseQuantity} = useContext(ProductContext);
 
 useEffect(() => {
     if(cart){
@@ -21,12 +23,12 @@ useEffect(() => {
     setTotal(total);
 })
     const addToCart = (product, id) => {
+        dicreaseQuantity(id);
         const newItem = { ...product, amount: 1 };
-        console.log(product);
         const cartItem = cart.find((item) => {
             return item.id == id ;
         });
-        // if cart item is already in the cart
+  
         if (cartItem) {
             const newCart = [...cart].map(item => {
                 if (item.id == id) {
@@ -42,26 +44,26 @@ useEffect(() => {
             setCart([...cart, newItem]);
         }
     }
-    // remove single item
+
     const removeFromCart = (id) => {
         const newCart = cart.filter(item => {
             return item.id !== id;
         });
         setCart(newCart);
     }
-    // remove all cart data
+
     const clearCart = () => {
         setCart([]);
     }
 
-    // increase
+
     const increaseAmount = (id) => {
-        const cartItem = cart.find(item => item.id === id);
-       
+        const cartItem = cart.find(item => item.id === id);      
         addToCart(cartItem, id);
     }
-    // increase
+  
     const dicreaseAmount = (id) => {
+        increaseQuantity(id)
         const cartItem = cart.find(item => {
             return item.id === id
         });
@@ -87,3 +89,4 @@ useEffect(() => {
 };
 
 export default CartProvider;
+

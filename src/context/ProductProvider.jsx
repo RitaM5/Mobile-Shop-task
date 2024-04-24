@@ -1,13 +1,37 @@
 import React, { createContext, useEffect, useState } from 'react';
 export const ProductContext = createContext(null);
 
-const ProductProvider = ({children}) => {
+const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
- 
+
     useEffect(() => {
         fetchData(6);
-  
+
     }, []);
+
+    // for quantity decrease and increase when a item add to cart added
+    const dicreaseQuantity = (id) => {
+        const lessQuantity = products.map(item => {
+            if (item.id === id) {
+                const newItem = item;
+                newItem.quantity = item.quantity - 1;
+                return newItem
+            }
+            return item;
+        });
+        setProducts(lessQuantity)
+    }
+    const increaseQuantity = (id) => {
+        const upsQuantity = products.map(item => {
+            if (item.id === id) {
+                const newItem = item;
+                newItem.quantity = item.quantity + 1;
+                return newItem
+            }
+            return item;
+        });
+        setProducts(upsQuantity);
+    }
 
     const fetchData = async (dataLimit) => {
         try {
@@ -41,11 +65,11 @@ const ProductProvider = ({children}) => {
         fetchData()
     }
 
-                  
+
     return (
-    <ProductContext.Provider value={{products, showAllData}}>
-        {children}
-    </ProductContext.Provider>)
+        <ProductContext.Provider value={{ products, showAllData, dicreaseQuantity, increaseQuantity }}>
+            {children}
+        </ProductContext.Provider>)
 };
 
 export default ProductProvider;

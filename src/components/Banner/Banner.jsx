@@ -31,7 +31,7 @@ const Banner = () => {
                             </div>
                         </div>
                         <div className='w-full relative bottom-20 md:bottom-0'>
-                            <img className='' src="/public/img/phone.png" alt="" srcset="" />
+                            <img className='' src="./img/phone.png" alt="" srcset="" />
                             <div className='border border-gray-600 absolute right-0 -bottom-12  md:-bottom-28 px-2 py-1 md:px-4 md:py-2'>
                                 <div>
                                     <i className="fas fa-shield-alt text-2xl"></i>
@@ -66,7 +66,7 @@ const Banner = () => {
                             </div>
                         </div>
                         <div className='w-full relative bottom-20 md:bottom-0'>
-                            <img className='' src="/public/img/phone.png" alt="" srcset="" />
+                            <img className='' src="./img/phone.png" alt="" srcset="" />
                             <div className='border border-gray-600 absolute right-0 -bottom-12  md:-bottom-28 px-2 py-1 md:px-4 md:py-2'>
                                 <div>
                                     <i className="fas fa-shield-alt text-2xl"></i>
@@ -101,7 +101,7 @@ const Banner = () => {
                             </div>
                         </div>
                         <div className='w-full relative bottom-20 md:bottom-0'>
-                            <img className='' src="/public/img/phone.png" alt="" srcset="" />
+                            <img className='' src="./img/phone.png" alt="" srcset="" />
                             <div className='border border-gray-600 absolute right-0 -bottom-12  md:-bottom-28 px-2 py-1 md:px-4 md:py-2'>
                                 <div>
                                     <i className="fas fa-shield-alt text-2xl"></i>

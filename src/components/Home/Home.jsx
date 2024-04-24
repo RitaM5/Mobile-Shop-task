@@ -87,10 +87,9 @@ const Home = () => {
                                         <i className="fas fa-star text-yellow-400 text-sm"></i>
                                         <span className='ml-2'>({product?.review})</span>
                                     </div>
-                                    <span className=' text-gray-500 font-semibold'>Qty: {product?.quantity} pcs</span>
+                                    <span className=' text-gray-500 font-semibold'>Qty: {product?.quantity < 0 ? 0 : product?.quantity} pcs</span>
                                 </div>
-                                {/* {product.quantity == 0 ? <button disabled onClick={() => handleAddToCart(product)} className='bg-[#a2b7ea] py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button> : <button onClick={() => handleAddToCart(product)} className='bgColor py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button>} */}
-                                <button onClick={() => addToCart(product, product?.id)} className='bgColor py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button>
+                                {product.quantity < 0 || product.quantity == 0  ? <button disabled onClick={() => addToCart(product, product?.id)}  className='bg-[#a2b7ea] py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button> : <button onClick={() => addToCart(product, product?.id)} className='bgColor py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button>}                            
                             </div>
                         </div>
                     ))}
