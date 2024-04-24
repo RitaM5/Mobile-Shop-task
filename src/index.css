@@ -10,6 +10,9 @@
 .bgColor{
   @apply  bg-[#285BDB]
 }
+.heartColor{
+  @apply  bg-[#a2b7ea]
+}
 .font-caveat {
   font-family: 'Caveat', cursive;
 }

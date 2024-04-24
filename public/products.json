@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "iPhone 13 Pro",
+        "presentPrice": 999,
+        "previousPrice": 1099,
+        "review": "21",
+        "quantity": 8
+    },
+    {
+        "id": 2,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "Samsung Galaxy S22 Ultra",
+        "presentPrice": 1199,
+        "previousPrice": 1299,
+        "review": "20",
+        "quantity": 13
+    },
+    {
+        "id": 3,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "Google Pixel 6 Pro",
+        "presentPrice": 899,
+        "previousPrice": 999,
+        "review": "22",
+        "quantity": 6
+    },
+    {
+        "id": 4,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "OnePlus 10 Pro",
+        "presentPrice": 899,
+        "previousPrice": 949,
+        "review": "20",
+        "quantity": 5
+    },
+    {
+        "id": 5,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "Xiaomi Mi 12 Ultra",
+        "presentPrice": 899,
+        "previousPrice": 949,
+        "review": "21",
+        "quantity": 8
+    },
+    {
+        "id": 6,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "Sony Xperia 5 III",
+        "presentPrice": 999,
+        "previousPrice": 1099,
+        "review": "22",
+        "quantity": 13
+    },
+    {
+        "id": 7,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "Huawei P50 Pro",
+        "presentPrice": 899,
+        "previousPrice": 999,
+        "review": "20",
+        "quantity": 11
+    },
+    {
+        "id": 8,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "Asus ROG Phone 5s",
+        "presentPrice": 799,
+        "previousPrice": 899,
+        "review": "21",
+        "quantity": 7
+    },
+    {
+        "id": 9,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwJ1VBl5LzhBWBXJzS1s7ooHYMyb9kNWEHtiC6kZqwL9wlIU7dLSH40Be4Rw&s",
+        "phoneName": "LG G8 ThinQ",
+        "presentPrice": 349,
+        "previousPrice": 450,
+        "review": "20",
+        "quantity": 12
+    }
+]

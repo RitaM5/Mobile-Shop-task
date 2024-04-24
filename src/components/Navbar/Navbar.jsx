@@ -1,9 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Sidebar from "../Sidebar/Sidebar";
+import { SidebarContext } from "../../context/SidebarProvider";
+import { CartContext } from "../../context/CartProvider";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
+  const {isOpen, setIsOpen} = useContext(SidebarContext);
+  const {itemAmount} = useContext(CartContext);
   return (
     <div className=" z-50 w-full bg-base-100 font-poppins">
       <div className="my-4 h-full lg:hidden font-caveat inline-flex items-center gap-3">
@@ -20,9 +24,9 @@ const Navbar = () => {
             <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
               <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
             </div>
-            <p className="block relative md:hidden lg:hidden" >
-            <span className="bgColor text-white px-2 rounded-full absolute bottom-8 left-4">0</span>
-                <i class="fas fa-shopping-cart text-black text-2xl"></i>
+            <p className="block relative md:hidden lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+              <span className="bgColor text-white px-2 rounded-full absolute bottom-8 left-4">{itemAmount}</span>
+              <i class="fas fa-shopping-cart text-black text-2xl"></i>
             </p>
           </div>
           <ul className="md:flex hidden text-lg relative right-6 textColor items-center gap-8 lg:gap-2 font-semibold ">
@@ -51,9 +55,9 @@ const Navbar = () => {
                 <i class="fas fa-heart text-black text-2xl"></i>
               </Link>
             </li>
-            <li className=" relative">
+            <li className=" relative" onClick={() => setIsOpen(!isOpen)}>
               <Link to="/" className="py-2 px-3 inline-block">
-                <span className="bgColor text-white px-2 rounded-full absolute bottom-8 left-8">0</span>
+                <span className="bgColor text-white px-2 rounded-full absolute bottom-8 left-8">{itemAmount}</span>
                 <i class="fas fa-shopping-cart text-black text-2xl"></i>
               </Link>
             </li>
@@ -100,7 +104,7 @@ const Navbar = () => {
               </li>
               <li className=" relative">
                 <Link to="/" className="py-3 px-3 inline-block">
-                  <span className="bg-red-600 text-white px-2 rounded-full absolute bottom-8 left-8">0</span>
+                  <span className="bg-red-600 text-white px-2 rounded-full absolute bottom-8 left-8">{itemAmount}</span>
                   <i class="fas fa-shopping-cart text-black text-2xl"></i>
                 </Link>
               </li>
@@ -113,6 +117,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <Sidebar></Sidebar>
     </div>
 
   );
