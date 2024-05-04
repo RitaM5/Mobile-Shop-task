@@ -65,13 +65,13 @@ const Home = () => {
                     </p>
                 </div>
                 <div className='grid lg:grid-cols-3 md:grid-cols-2 max-md:grid-cols-2 max-sm:grid-cols-1 gap-5 py-10'>
-                    {products.map((product, key) => (
-                        <div key={product.id} className=' relative group w-full h-full border rounded-md bg-white shadow-lg py-6'>
+                    {products.map((product) => (
+                        <div key={product?.id} className=' relative group w-full h-full border rounded-md bg-white shadow-lg py-6'>
                             <div className=' space-y-2 mt-4 absolute top-0 right-2 transition-all duration-300 opacity-0 group-hover:opacity-100'>
                                 <div><i className="fas fa-search w-8 h-8 rounded-full flex justify-center items-center text-sm bgColor text-white"></i></div>
                                 <div><i className="fas fa-heart w-8 h-8 rounded-full flex justify-center items-center text-sm heartColor text-white"></i></div>
                             </div>
-                            <img className=' mx-auto' src={product.img} alt='' />
+                            <img className=' mx-auto' src={product?.img} alt='' />
                             <div className='text-center '>
                                 <h1 className='textColor text-lg font-semibold mt-4'>{product?.phoneName}</h1>
                                 <p className='text-md flex items-center justify-center gap-6'>
@@ -89,7 +89,7 @@ const Home = () => {
                                     </div>
                                     <span className=' text-gray-500 font-semibold'>Qty: {product?.quantity < 0 ? 0 : product?.quantity} pcs</span>
                                 </div>
-                                {product.quantity < 0 || product.quantity == 0  ? <button disabled onClick={() => addToCart(product, product?.id)}  className='bg-[#a2b7ea] py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button> : <button onClick={() => addToCart(product, product?.id)} className='bgColor py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button>}                            
+                                {product?.quantity < 0 || product?.quantity == 0  ? <button disabled onClick={() => addToCart(product, product?.id)}  className='bg-[#a2b7ea] py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button> : <button onClick={() => addToCart(product, product?.id)} className='bgColor py-2 px-16 rounded-md text-white font-semibold my-8'><span className='font-semibold text-xl'>+</span> Add to Cart</button>}                            
                             </div>
                         </div>
                     ))}

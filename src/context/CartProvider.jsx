@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { ProductContext } from './ProductProvider';
+
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [itemAmount, setItemAmount] = useState(0);
     const [total, setTotal] = useState(0);
-    const {dicreaseQuantity, increaseQuantity} = useContext(ProductContext);
+    const {dicreaseQuantity, increaseQuantity, backQuantity} = useContext(ProductContext);
 
 useEffect(() => {
     if(cart){
@@ -32,7 +33,9 @@ useEffect(() => {
         if (cartItem) {
             const newCart = [...cart].map(item => {
                 if (item.id == id) {
-                    return { ...item, amount: cartItem.amount + 1};
+                    const newItem = item;
+                    newItem.quantity = item.quantity - 1;
+                    return { ...item, newItem, amount: cartItem.amount + 1};
                 }
                 else {
                     return item;
@@ -45,20 +48,28 @@ useEffect(() => {
         }
     }
 
-    const removeFromCart = (id) => {
+    const removeFromCart = (id, amount) => {
+
         const newCart = cart.filter(item => {
             return item.id !== id;
         });
         setCart(newCart);
+        backQuantity(id, amount);
     }
 
     const clearCart = () => {
+    cart.forEach(item => {
+        backQuantity(item.id, item.amount);
+        })
         setCart([]);
     }
 
 
     const increaseAmount = (id) => {
-        const cartItem = cart.find(item => item.id === id);      
+        const cartItem = cart.find(item =>  {
+            return  item.id === id
+          });  
+   
         addToCart(cartItem, id);
     }
   
@@ -70,7 +81,9 @@ useEffect(() => {
         if(cartItem){
             const newCart = cart.map(item => {
                 if(item.id === id){
-                    return {...item, amount:cartItem?.amount - 1};
+                    const newItem = item;
+                    newItem.quantity = item.quantity + 1;
+                    return {...item, newItem, amount:cartItem?.amount - 1};
                 }
                 else{
                     return item;
