@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [itemAmount, setItemAmount] = useState(0);
     const [total, setTotal] = useState(0);
-    const {dicreaseQuantity, increaseQuantity, backQuantity} = useContext(ProductContext);
+    const {dicreaseQuantity, increaseQuantity, backQuantity, backProductsQuantity} = useContext(ProductContext);
 
 useEffect(() => {
     if(cart){
@@ -73,7 +73,7 @@ useEffect(() => {
         addToCart(cartItem, id);
     }
   
-    const dicreaseAmount = (id) => {
+    const dicreaseAmount = (id, amount) => {
         increaseQuantity(id)
         const cartItem = cart.find(item => {
             return item.id === id
@@ -91,8 +91,9 @@ useEffect(() => {
             });
             setCart(newCart);
         }
-        if(cartItem.amount < 2){
+        if(cartItem.amount == 1){
             removeFromCart(id);
+            backProductsQuantity(id);
         }
     }
     return (

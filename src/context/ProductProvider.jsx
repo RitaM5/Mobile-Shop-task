@@ -42,7 +42,15 @@ const ProductProvider = ({ children }) => {
         });
         setProducts(updatedOriginalProducts);
     }
-
+    const backProductsQuantity = (id) => {
+        const updatedOriginalProducts = products.map(item => {
+            if (item.id === id) {
+                return { ...item, quantity:item.quantity};
+            }
+            return item;
+        });
+        setProducts(updatedOriginalProducts);
+    }
     const fetchData = async (dataLimit) => {
         try {
             const response = await fetch('products.json');
@@ -77,7 +85,7 @@ const ProductProvider = ({ children }) => {
 
 
     return (
-        <ProductContext.Provider value={{ products, showAllData, dicreaseQuantity, increaseQuantity, backQuantity}}>
+        <ProductContext.Provider value={{ products, showAllData, dicreaseQuantity, increaseQuantity, backQuantity,backProductsQuantity}}>
             {children}
         </ProductContext.Provider>)
 };

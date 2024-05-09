@@ -9,7 +9,7 @@ const CartItem = ({ item }) => {
                 <div className='grid grid-cols-1 bgColor text-xl min-w-7 font-semibold rounded-sm text-white'>
                 { item?.quantity == 0 ? <button disabled onClick={() => increaseAmount(item?.id)}>+</button> : <button onClick={() => increaseAmount(item?.id)}>+</button>}
                    <span disabled className='bg-white text-black'>{item?.amount}</span>
-                    <span onClick={() => dicreaseAmount(item?.id)}>-</span>
+                    <span onClick={() => dicreaseAmount(item?.id, item?.amount)}>-</span>
                 </div>
                 <div className='flex gap-2 items-center'>
                     <div className='h-[60px] w-[60px]'>
